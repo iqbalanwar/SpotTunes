@@ -1,4 +1,6 @@
 package com.example.spottunes.service;
+import com.example.spottunes.model.User;
+
 
 public interface UserService {
 

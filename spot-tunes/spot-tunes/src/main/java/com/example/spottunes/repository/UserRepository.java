@@ -1,4 +1,6 @@
 package com.example.spottunes.repository;
+import com.example.spottunes.model.User;
+
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
