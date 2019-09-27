@@ -6,7 +6,7 @@ Iqbal Anwar (@<a href = "https://github.com/iqbalanwar">iqbalanwar</a>)<br/>
 Christine Le (@<a href="https://github.com/le-christine">le-christine</a>)<br/>
   
 # Design Decisions
-<img alt = "database design" src="spot-tunes-tables.jpg" width=500/><br/>
+<img alt = "database design" src="images/spot-tunes-erd.jpeg" width=500/><br/>
 - Our SpotTunes app has three data models: `User`,`Song` and `Playlist`.
 - The `User` has the fields id, username and password.
 - The `Song` table has the fields id, title and length.
