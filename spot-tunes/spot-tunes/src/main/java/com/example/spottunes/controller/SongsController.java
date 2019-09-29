@@ -1,19 +1,19 @@
 package com.example.spottunes.controller;
 
 import com.example.spottunes.model.Songs;
+import com.example.spottunes.service.SongsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class SongsController {
+
     @Autowired
     SongsService songsService;
 
     // Endpoint adds a song to the table
     @PostMapping("/add")
-    public Songs addSong(@RequestBody Song newSong) {
+    public Songs addSong(@RequestBody Songs newSong) {
         return songsService.addSong(newSong);
     }
 

@@ -1,14 +1,17 @@
 package com.example.spottunes.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import com.example.spottunes.model.Songs;
+import com.example.spottunes.repository.SongsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.sql.Time;
-
+@Service
 public class SongsServiceImpl implements SongsService {
 
     @Autowired
-    SongsRespository songsRepository;
+    SongsRepository songsRepository;
 
     @Autowired
     SongsService songsService;
