@@ -20,6 +20,6 @@ public class SongsServiceImpl implements SongsService {
 
     @Override
     public Iterable<Songs> listSongs() {
-        return null;
+        return songsRepository.findAll();
     }
 }
