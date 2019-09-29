@@ -16,5 +16,10 @@ public class SongsController {
         return songsService.addSong(newSong);
     }
 
+    // This lists all the songs found in the table
+    @GetMapping("/list")
+    public Iterable<Song> listSings() {
+        return songsService.listSongs();
+    }
 }
 
