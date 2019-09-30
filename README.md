@@ -18,6 +18,13 @@ Christine Le (@<a href="https://github.com/le-christine">le-christine</a>)<br/>
 
 # Completions
 - What went right.
+
+| Day            | 1                                    | 2                                            | 3                                                   | 4                                                     |
+|----------------|--------------------------------------|----------------------------------------------|-----------------------------------------------------|-------------------------------------------------------|
+| Goals  |Handled login/signup <br/> Created User table |  Created Songs and<br/> User Role tables | Attach roles to users<br/>Add Security<br/>Create Playlist JOIN table   |  |
+| Task Completed?  | Y  | Y  |  |  |
+
+
 # Challenges
 - Challenges you faced.
 # Reflection 
