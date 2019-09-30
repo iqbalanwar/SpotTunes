@@ -1,10 +1,19 @@
 package com.example.spottunes.service;
 import com.example.spottunes.model.User;
+import org.springframework.http.HttpStatus;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 
-public interface UserService {
+public interface UserService extends UserDetailsService {
 
-    public User createUser(User newUser);
+    public User getUser(String username);
 
-    public User login(String username, String password);
+    public String createUser(User newUser);
+
+    public String login(User user);
+
+    public HttpStatus deleteById(Long userId);
+
+
+
 }
