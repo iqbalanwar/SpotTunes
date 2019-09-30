@@ -12,13 +12,13 @@ public class SongsController {
     SongsService songsService;
 
     // Endpoint adds a song to the table
-    @PostMapping("/add")
+    @PostMapping("/song/add")
     public Songs addSong(@RequestBody Songs newSong) {
         return songsService.addSong(newSong);
     }
 
     // This lists all the songs found in the table
-    @GetMapping("/list")
+    @GetMapping("/song/list")
     public Iterable<Songs> listSings() {
         return songsService.listSongs();
     }

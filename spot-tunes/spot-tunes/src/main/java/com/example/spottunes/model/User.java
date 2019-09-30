@@ -44,7 +44,7 @@ public class User {
     public User() {}
 
 
-    public List<Songs> addCourse(Songs song){
+    public List<Songs> addSongs(Songs song){
         if(songs == null)
             songs = new ArrayList<>();
         songs.add(song);
@@ -52,9 +52,9 @@ public class User {
         return songs;
     }
 
-    public List<Songs> getCourses(){ return songs; }
+    public List<Songs> getSongs(){ return songs; }
 
-    public void setCourses(List<Songs> songs) { this.songs = songs; }
+    public void setSongs(List<Songs> songs) { this.songs = songs; }
 
 
 

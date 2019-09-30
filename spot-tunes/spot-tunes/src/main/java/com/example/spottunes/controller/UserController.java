@@ -36,4 +36,9 @@ public class UserController {
         return "Hello World!!";
     }
 
+
+    @PutMapping("/user/{username}/add/{song_id}")
+    public User addSong(@PathVariable String username, @PathVariable int song_id) {
+        return userService.addSong(username, song_id);
+    }
 }

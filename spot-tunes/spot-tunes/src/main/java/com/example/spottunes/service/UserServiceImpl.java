@@ -1,8 +1,10 @@
 package com.example.spottunes.service;
 
 import com.example.spottunes.config.JwtUtil;
+import com.example.spottunes.model.Songs;
 import com.example.spottunes.model.User;
 import com.example.spottunes.model.UserRole;
+import com.example.spottunes.repository.SongsRepository;
 import com.example.spottunes.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -25,6 +27,12 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     UserRoleService userRoleService;
+
+    @Autowired
+    SongsRepository songRepository;
+
+    @Autowired
+    SongsService songsService;
 
     @Autowired
     JwtUtil jwtUtil;
@@ -85,5 +93,15 @@ public class UserServiceImpl implements UserService {
     public HttpStatus deleteById(Long userId){
         userRepository.deleteById(userId);
         return HttpStatus.OK;
+    }
+
+
+    @Override
+    public User addSong(String username, int song_id) {
+        Songs song = songRepository.findById(song_id).get();
+        User user = getUser(username);
+        user.addSongs(song);
+
+        return user;
     }
 }
