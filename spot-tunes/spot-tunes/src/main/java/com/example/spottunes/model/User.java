@@ -31,7 +31,32 @@ public class User {
     @JoinColumn(name = "user_role_id", nullable = false)
     private UserRole userRole;
 
+
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {CascadeType.DETACH,
+                    CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinTable(name = "playlist",
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = @JoinColumn(name = "song_id"))
+    private List<Songs> songs;
+
+
     public User() {}
+
+
+    public List<Songs> addCourse(Songs song){
+        if(songs == null)
+            songs = new ArrayList<>();
+        songs.add(song);
+
+        return songs;
+    }
+
+    public List<Songs> getCourses(){ return songs; }
+
+    public void setCourses(List<Songs> songs) { this.songs = songs; }
+
+
 
     public UserRole getUserRole() { return userRole; }
 
