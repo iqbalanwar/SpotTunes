@@ -1,10 +1,14 @@
 package com.example.spottunes.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import com.example.spottunes.config.JwtUtil;
+import com.example.spottunes.model.JwtResponse;
 import com.example.spottunes.model.User;
 import com.example.spottunes.service.UserService;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserController {
@@ -12,13 +16,24 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @PostMapping("/signup")
-    public User createUser(@RequestBody User newUser) {
-        return userService.createUser(newUser);
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody User user) {
+        return ResponseEntity.ok(new JwtResponse(userService.login(user)));
     }
 
-    @GetMapping("/login/{username}/{password}")
-    public User login(@PathVariable String username, @PathVariable String password){
-        return userService.login(username, password);
+    @PostMapping("/signup")
+    public ResponseEntity<?> createUser(@RequestBody User newUser) {
+        return ResponseEntity.ok(new JwtResponse(userService.createUser(newUser)));
     }
+
+    @DeleteMapping("/user/{userId}")
+    public HttpStatus deleteUserById(@PathVariable Long userId) {
+        return userService.deleteById(userId);
+    }
+
+    @GetMapping("/hello")
+    public String helloWorld() {
+        return "Hello World!!";
+    }
+
 }
