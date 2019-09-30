@@ -21,7 +21,7 @@ Christine Le (@<a href="https://github.com/le-christine">le-christine</a>)<br/>
 
 | Day            | 1                                    | 2                                            | 3                                                   | 4                                                     |
 |----------------|--------------------------------------|----------------------------------------------|-----------------------------------------------------|-------------------------------------------------------|
-| Goals  |Handled login/signup <br/> Created User table |  Created Songs and<br/> User Role tables | Create Playlist Table & map</br>Attach roles to users<br/>Add Security<br/>Create Playlist JOIN table   |  |
+| Goals  |Handled login/signup <br/> Created User table |  Created Songs and<br/> User Role tables | Create Playlist JOIN Table & map</br>Attach roles to users<br/>Add Security<br/>  |  |
 | Task Completed?  | Y  | Y  |  |  |
 
 
