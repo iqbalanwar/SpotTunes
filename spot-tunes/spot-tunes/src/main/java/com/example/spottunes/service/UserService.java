@@ -16,4 +16,5 @@ public interface UserService extends UserDetailsService {
 
     public User addSongs(String username, int song_id);
 
+    public User deleteSongFromPlaylist(String username, int song_id);
 }

@@ -49,6 +49,14 @@ public class User {
 
         return songs;
     }
+    public List<Songs> deleteSongs(Songs song) {
+        try {
+            songs.remove(song);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return songs;
+    }
 
     public List<Songs> getSongs(){ return songs; }
 
