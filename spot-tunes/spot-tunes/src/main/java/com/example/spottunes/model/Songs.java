@@ -33,10 +33,8 @@ public class Songs {
             joinColumns = {@JoinColumn(name = "song_id")},
             inverseJoinColumns = @JoinColumn(name = "user_id"))
     private List<User> users;
-
     
     public Songs() {}
-
 
     public List<User> getUsers(){ return users; }
 
