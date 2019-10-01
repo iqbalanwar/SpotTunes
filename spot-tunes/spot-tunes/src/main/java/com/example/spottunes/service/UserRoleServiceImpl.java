@@ -19,4 +19,9 @@ public class UserRoleServiceImpl implements UserRoleService{
     public UserRole getRole(String roleName) {
         return userRoleRepository.findByName(roleName);
     }
+
+    @Override
+    public Iterable<UserRole> listRoles() {
+        return userRoleRepository.findAll();
+    }
 }
