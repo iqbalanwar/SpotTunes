@@ -104,4 +104,13 @@ public class UserServiceImpl implements UserService {
 
         return userRepository.save(user);
     }
+
+    public User deleteSongFromPlaylist(String username, int song_id) {
+        Songs song = songRepository.findById(song_id).get();
+        User user = getUser(username);
+        user.deleteSongs(song);
+
+        return userRepository.save(user);
+    }
+
 }

@@ -42,4 +42,9 @@ public class UserController {
         return userService.addSongs(username, song_id);
     }
 
+    @DeleteMapping("/user/{username}/delete/{song_id}")
+    public User deleteSongFromPlaylist(@PathVariable String username, @PathVariable int song_id) {
+        return userService.deleteSongFromPlaylist(username, song_id);
+    }
+
 }
