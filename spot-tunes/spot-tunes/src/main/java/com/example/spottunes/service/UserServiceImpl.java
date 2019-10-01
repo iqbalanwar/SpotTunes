@@ -97,11 +97,11 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public User addSong(String username, int song_id) {
+    public User addSongs(String username, int song_id) {
         Songs song = songRepository.findById(song_id).get();
         User user = getUser(username);
         user.addSongs(song);
 
-        return user;
+        return userRepository.save(user);
     }
 }
