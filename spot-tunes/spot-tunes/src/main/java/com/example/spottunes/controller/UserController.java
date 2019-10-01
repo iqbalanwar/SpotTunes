@@ -39,7 +39,7 @@ public class UserController {
 
     @PutMapping("/user/{username}/add/{song_id}")
     public User addSong(@PathVariable String username, @PathVariable int song_id) {
-        return userService.addSong(username, song_id);
+        return userService.addSongs(username, song_id);
     }
 
 }
