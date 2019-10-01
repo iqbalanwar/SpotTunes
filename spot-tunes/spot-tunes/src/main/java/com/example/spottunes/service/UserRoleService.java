@@ -6,4 +6,6 @@ public interface UserRoleService {
     public UserRole createRole(UserRole newRole);
 
     public UserRole getRole(String roleName);
+
+    public Iterable<UserRole> listRoles();
 }
