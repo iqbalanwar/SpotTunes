@@ -68,7 +68,7 @@ public class UserServiceTest {
         // ADDING A SONG TO THE USER'S SONG ARRAY
         User tempUser = new User();
         // added the dummy song here
-        tempUser.addSongs(song);
+        tempUser.addSongsToList(song);
 
 //        // FINDS THE SONG FROM THE SONG REPO BASED ON SONG_ID, AND THEN CALLS user.addSongs(song)
 //        userService.addSongs("Jim", 22);
@@ -84,9 +84,9 @@ public class UserServiceTest {
     public void deleteSongs_SongDeleted_success() {
         // Made a user, user now has a song (tested, it works)
         User tempUser = new User();
-        tempUser.addSongs(song);
+        tempUser.addSongsToList(song);
 
-        tempUser.deleteSongs(song);
+        tempUser.deleteSongsFromList(song);
 
         // Supposed to return nothing (an empty List)
         tempUser.getSongs().forEach(song -> System.out.println(song.getTitle()));
