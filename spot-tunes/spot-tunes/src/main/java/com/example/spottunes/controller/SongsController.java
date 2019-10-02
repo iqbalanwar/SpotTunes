@@ -14,7 +14,7 @@ public class SongsController {
     // Endpoint adds a song to the table
     @PostMapping("/song/add")
     public Songs addSong(@RequestBody Songs newSong) {
-        return songsService.addSong(newSong);
+        return songsService.addSongToDB(newSong);
     }
 
     // This lists all the songs found in the table

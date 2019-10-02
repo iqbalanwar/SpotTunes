@@ -6,7 +6,7 @@ import java.sql.Time;
 
 public interface SongsService {
 
-    public Songs addSong(Songs newSong);
+    public Songs addSongToDB(Songs newSong);
 
     public Iterable<Songs> listSongs();
 

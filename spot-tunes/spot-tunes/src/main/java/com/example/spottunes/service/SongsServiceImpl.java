@@ -17,7 +17,7 @@ public class SongsServiceImpl implements SongsService {
     SongsService songsService;
 
     @Override
-    public Songs addSong(Songs newSong) {
+    public Songs addSongToDB(Songs newSong) {
         return songsRepository.save(newSong);
     }
 

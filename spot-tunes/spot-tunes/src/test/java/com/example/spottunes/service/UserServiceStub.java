@@ -33,7 +33,7 @@ public class UserServiceStub implements UserService {
     }
 
     @Override
-    public User addSongs(String username, int song_id) {
+    public Iterable<Songs> addSongs(String username, int song_id) {
         Songs song = new Songs();
 
         song.setId(song_id);
@@ -43,11 +43,16 @@ public class UserServiceStub implements UserService {
         User user = getUser(username);
         user.addSongs(song);
 
-        return user;
+        return user.getSongs();
     }
 
     @Override
-    public User deleteSongFromPlaylist(String username, int song_id) {
+    public Iterable<Songs> deleteSongFromPlaylist(String username, int song_id) {
+        return null;
+    }
+
+    @Override
+    public Iterable<User> listUsers() {
         return null;
     }
 
