@@ -97,20 +97,26 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public User addSongs(String username, int song_id) {
+    public Iterable<Songs> addSongsToPlaylist(String username, int song_id) {
         Songs song = songRepository.findById(song_id).get();
         User user = getUser(username);
-        user.addSongs(song);
+        user.addSongsToList(song);
 
-        return userRepository.save(user);
+        userRepository.save(user);
+        return user.getSongs();
     }
 
-    public User deleteSongFromPlaylist(String username, int song_id) {
+    public Iterable<Songs> deleteSongFromPlaylist(String username, int song_id) {
         Songs song = songRepository.findById(song_id).get();
         User user = getUser(username);
-        user.deleteSongs(song);
+        user.deleteSongsFromList(song);
 
-        return userRepository.save(user);
+        userRepository.save(user);
+        return user.getSongs();
+    }
+
+    public Iterable<User> listUsers() {
+        return userRepository.findAll();
     }
 
 }

@@ -42,14 +42,14 @@ public class User {
     public User() {}
 
 
-    public List<Songs> addSongs(Songs song){
+    public List<Songs> addSongsToList (Songs song){
         if(songs == null)
             songs = new ArrayList<>();
         songs.add(song);
 
         return songs;
     }
-    public List<Songs> deleteSongs(Songs song) {
+    public List<Songs> deleteSongsFromList (Songs song) {
         try {
             songs.remove(song);
         } catch (Exception e) {
@@ -61,7 +61,6 @@ public class User {
     public List<Songs> getSongs(){ return songs; }
 
     public void setSongs(List<Songs> songs) { this.songs = songs; }
-
 
 
     public UserRole getUserRole() { return userRole; }

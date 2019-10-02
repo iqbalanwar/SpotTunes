@@ -22,22 +22,7 @@ public class UserRole {
     @Column(unique = true)
     private String name;
 
-    @OneToMany(mappedBy = "userRole",
-            cascade = CascadeType.ALL)
-    private List<User> users;
-
     public UserRole() {}
-
-    public void addUser(User user){
-        if(users == null)
-            users = new ArrayList<>();
-        users.add(user);
-        user.setUserRole(this);
-    }
-
-    public void setUsers(List<User> users){ this.users = users; }
-
-    public List<User> getUsers(){ return users; }
 
     public int getId() {
         return id;

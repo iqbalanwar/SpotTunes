@@ -2,6 +2,7 @@ package com.example.spottunes.controller;
 
 import com.example.spottunes.config.JwtUtil;
 import com.example.spottunes.model.JwtResponse;
+import com.example.spottunes.model.Songs;
 import com.example.spottunes.model.User;
 import com.example.spottunes.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,13 +39,17 @@ public class UserController {
 
 
     @PutMapping("/user/{username}/add/{song_id}")
-    public User addSong(@PathVariable String username, @PathVariable int song_id) {
-        return userService.addSongs(username, song_id);
+    public Iterable<Songs> addSong(@PathVariable String username, @PathVariable int song_id) {
+        return userService.addSongsToPlaylist(username, song_id);
     }
 
     @DeleteMapping("/user/{username}/delete/{song_id}")
-    public User deleteSongFromPlaylist(@PathVariable String username, @PathVariable int song_id) {
+    public Iterable<Songs> deleteSongFromPlaylist(@PathVariable String username, @PathVariable int song_id) {
         return userService.deleteSongFromPlaylist(username, song_id);
     }
 
+    @GetMapping("/user/list")
+    public Iterable<User> listUsers() {
+        return userService.listUsers();
+    }
 }
