@@ -26,7 +26,10 @@ public class WelcomeController {
         return "home";
     }
 
-
+    @GetMapping("/landing")
+    public String landingPage(Model model) {
+        return "landing";
+    }
 //
 ////
 ////    @PostMapping("/login")
