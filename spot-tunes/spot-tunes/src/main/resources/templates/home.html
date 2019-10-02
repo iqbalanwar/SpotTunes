@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+<body>
+<h1>Welcome to <span th:text="${appName}">Our App</span></h1>
+
+
+<div class="login" style="text-align: center">
+    <p>Log in:</p>
+<input class="loginUsername" type="text" placeholder="username"/><br/>
+<input class="loginPassword" type="text" placeholder="password"/><br/>
+<input type="submit" onclick="loginUser()"/><br/>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
