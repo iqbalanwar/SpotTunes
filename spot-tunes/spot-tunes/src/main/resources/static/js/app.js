@@ -1,4 +1,3 @@
-/*
 function loginUser() {
     // LOGIN USER USING THE CREDENTIALS
     const userName = document.querySelector('.loginUsername').value;
@@ -18,14 +17,14 @@ function loginUser() {
         .then((res) => {
             return res.json();
         })
-        .then((res) =>{
+        .then((res) => {
             localStorage.setItem('user', res.token);
             if (res.token) { // DO I GET A RESPONSE? IF YES:
                 console.log(localStorage.getItem('user'));
-                window.location.href="landing";
+                window.location.href = "landing";
             }
         })
-        .catch((error) =>{
+        .catch((error) => {
             console.log(error);
         })
-}*/
+}
