@@ -18,6 +18,12 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    @GetMapping("/get/{username}")
+    public String getUsername(@PathVariable String username){
+        return userService.getUser(username).getUsername();
+    }
+
+
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody User user) {
         return ResponseEntity.ok(new JwtResponse(userService.login(user)));
