@@ -12,10 +12,17 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UserController {
 
     @Autowired
     UserService userService;
+
+    @GetMapping("/get/{username}")
+    public String getUsername(@PathVariable String username){
+        return userService.getUser(username).getUsername();
+    }
+
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody User user) {
