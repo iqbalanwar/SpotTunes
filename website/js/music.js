@@ -1,5 +1,6 @@
 function loadAllSongs() {
     fetch("http://localhost:8181/song/list", {
+      mode: "no-cors",
       headers: {
         "Authorization" : "Bearer " + localStorage.getItem('user')
         }
